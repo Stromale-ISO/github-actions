@@ -12,14 +12,14 @@ on:
 
 jobs:                        #перечисление jobs
   my_testing:                #название job
-    runs_on: ubuntu-latest   #то на чем gha запустит наш job
+    runs-on: ubuntu-22.04
     steps:
     - name: Print Hello World #название
       run: echo "Hello world" #вывод HW через ЛИНУКС КОМАНДЫ
 
 
   my_deploy:                  #название job
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: [my_testing]
     steps:
     - name: Print Hello World 
