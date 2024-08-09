@@ -3,3 +3,9 @@
 #
 # Copyleft (c) by Roman 2024.
 #----------------------------------
+
+name: My-GitHubActions-Basics
+on:
+  push:
+    branches:
+      - master
