@@ -8,4 +8,22 @@ name: My-GitHubActions-Basics
 on:
   push:
     branches:
-      - master
+      - main
+
+jobs:                        #перечисление jobs
+  my_testing:                #название job
+    runs_on: ubuntu-latest   #то на чем gha запустит наш job
+    steps:
+    - name: Print Hello World #название
+      run: echo "Hello world" #вывод HW через ЛИНУКС КОМАНДЫ
+
+
+  my_deploy:                  #название job
+    runs-on: ubuntu-latest
+    needs: [my_testing]
+    steps:
+    - name: Print Hello World 
+      run: echo "Hello world"
+
+
+  
