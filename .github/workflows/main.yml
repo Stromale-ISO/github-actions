@@ -23,6 +23,17 @@ jobs:                        #перечисление jobs
       run: | #вывод HW через ЛИНУКС КОМАНДЫ
         echo "Hello world"
         echo "Application name: ${{ env.APPLICATION_NAME }}"
+
+    - name: list current folder # текущая папка
+      run: ls -la
+        
+    - name: Git clone my repo 
+      uses: actions/checkout@v1 #клонируем репозиторий в нашу директорию
+#тк запускается нам virtual docker image в котором ничего нету
+#(теперь есть файлы гит) с которыми будем делать build/test/deploy
+
+    - name: list current folder # текущая папка
+      run: ls -la
       
 
   my_deploy:                  #название job
