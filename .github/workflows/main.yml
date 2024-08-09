@@ -8,7 +8,7 @@ name: My-GitHubActions-Basics
 
 env:
   APPLICATION_NAME    : "MyFirstGHA"
-  DEPLOY_PACKAGE_NAME : "first-gha-ver-$(( github.sha ))"
+  DEPLOY_PACKAGE_NAME : "first-gha-ver-${{ github.sha }}"
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:                        #перечисление jobs
     - name: Print Hello World #название
       run: | #вывод HW через ЛИНУКС КОМАНДЫ
         echo "Hello world"
-        echo "Application name: $(( env.APPLICATION_NAME ))"
+        echo "Application name: ${{ env.APPLICATION_NAME }}"
       
 
   my_deploy:                  #название job
@@ -32,6 +32,6 @@ jobs:                        #перечисление jobs
     - name: Print Hello World 
       run: |
         echo "Hello world" 
-        echo "Deploy package name $(( env.DEPLOY_PACKAGE_NAME ))"
+        echo "Deploy package name ${{ env.DEPLOY_PACKAGE_NAME }}"
 
   
